@@ -1,0 +1,28 @@
+{
+  "name": "recued",
+  "version": "1.0.0",
+  "description": "Connects Gemini CLI to your own Recued server over MCP: read your notes, tasks and the things you own, and propose changes that wait for your approval in Recued.",
+  "mcpServers": {
+    "recued": {
+      "url": "${RECUED_MCP_URL}",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${RECUED_MCP_TOKEN}"
+      }
+    }
+  },
+  "settings": [
+    {
+      "name": "Recued MCP address",
+      "description": "The address the contract's Connect tab shows. On the computer Recued runs on: http://127.0.0.1:7717/mcp",
+      "envVar": "RECUED_MCP_URL",
+      "sensitive": false
+    },
+    {
+      "name": "Recued contract key",
+      "description": "The key of a contract you make for Gemini CLI in the Recued web app, under Contracts.",
+      "envVar": "RECUED_MCP_TOKEN",
+      "sensitive": true
+    }
+  ]
+}
